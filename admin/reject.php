@@ -10,13 +10,8 @@
 session_start();
  include '../connect.php';
   $id=$_GET['id'];
-  $sql = "DELETE FROM tbl_reg WHERE id = '$id'";
-    mysqli_query($con, $sql);
- 
-   	  $sq = "DELETE FROM tbl_login WHERE loginid = '$id'";
-    mysqli_query($con, $sq);
-	
-	$sql1 = "DELETE FROM crimedetails WHERE logid = '$id'";
+  
+	$sql1 = "update crimedetails set status='Rejected' where detailid=$id";
     mysqli_query($con, $sql1);
     echo "<script> alert('Rejected'); window.location.href='userapproval.php';</script>";
 ?>

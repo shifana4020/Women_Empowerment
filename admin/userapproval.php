@@ -49,7 +49,7 @@ $res=mysqli_query($con,$sql);
 while($r=mysqli_fetch_array($res))
 {
 $id=$r['logid'];
-$sql1="select * from tbl_reg where  loginid=$id";
+$sql1="select R.*,C.detailid from tbl_reg R,crimedetails C where  loginid=$id";
 $res1=mysqli_query($con,$sql1);
 
 $r1=mysqli_fetch_array($res1);
@@ -59,8 +59,8 @@ $r1=mysqli_fetch_array($res1);
 		<?php echo $r1['district'];?><br /><?php echo $r1['pincode'];?></td><td><img src="../uploads/<?php echo $r['idproof'];?>" width="100" height="100" /></td><td>
 		
 		<?php echo $r['discription'];?><br />on <?php echo $r['crimedate'];?></td>
-        		<td><a href="approve.php?id=<?php echo $r1[9];?>"><img src="images/a.jpg" width="80" height="30"></a></td>
-                <td><a href="reject.php?id=<?php echo $r1[9];?>"><img src="images/ry.jpg" width="80" height="30"></a></td>
+        		<td><a href="approve.php?id=<?php echo $r1[9];?>&did=<?php echo $r[0]; ?>"><img src="images/a.jpg" width="80" height="30"></a></td>
+                <td><a href="reject.php?id=<?php echo $r[0];?>"><img src="images/ry.jpg" width="80" height="30"></a></td>
 				</tr>
                       <?php
 }

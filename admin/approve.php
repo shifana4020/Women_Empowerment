@@ -10,12 +10,8 @@
 session_start();
  include '../connect.php';
   $id=$_GET['id'];
-
-  $sq = "UPDATE tbl_login SET status='1'WHERE loginid='$id'";
-    mysqli_query($con, $sq);
-  $sql="update tbl_reg set status=1 where loginid=$id";
-    mysqli_query($con, $sql);
-	$sql1="update crimedetails set status='Aproved' where logid=$id";
+  $did =$_GET['did'];
+  $sql1="update crimedetails set status='Aproved' where detailid=$did";
     mysqli_query($con, $sql1); 
 	echo "<script> alert('Approved'); window.location.href='userapproval.php';</script>";
 ?>
