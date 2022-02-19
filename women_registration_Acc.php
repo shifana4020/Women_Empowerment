@@ -31,7 +31,7 @@
             {
              $row=mysqli_fetch_assoc($result);
              $loid=$row['loginid'];
-             echo $sql = "INSERT INTO tbl_reg (name,address,email,phone,district,pincode,gender,estatus,loginid) VALUES ('$name','$address','$email','$phone','$district','$pincode','$gender','1','$loid')";
+             $sql = "INSERT INTO tbl_reg (name,address,email,phone,district,pincode,gender,estatus,loginid) VALUES ('$name','$address','$email','$phone','$district','$pincode','$gender','1','$loid')";
              mysqli_query($con, $sql);
                echo "<script> alert('Registration successfull'); window.location.href='index.php';</script>";
              }

@@ -9,7 +9,6 @@
 <?php
 session_start();
  include '../connect.php';
-  $id=$_GET['id'];
   $did =$_GET['did'];
   $sql1="update crimedetails set status='Aproved' where detailid=$did";
     mysqli_query($con, $sql1); 

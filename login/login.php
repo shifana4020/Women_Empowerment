@@ -95,9 +95,6 @@
           </tr>
            
 <tr><td><input type="submit" class="main-button icon-button" value="Login"></td></tr>
-        
-
-
 </table>
         </div>
         <div id="success"></div>

@@ -317,96 +317,161 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-function valid()
+	<script>		
+function Validate() 
 {
-if(document.form1.name.value=="")
-{
-alert("enter name");
-document.form1.name.focus();
-return false;
-}
-var nameRegex = /^[a-zA-Z\ ]+$/;
-    var validname = document.form1.name.value.match(nameRegex);
-    if(validname == null){
-        alert("Your name is not valid. Only characters A-Z, a-z,space are  acceptable.");
-        document.form1.name.focus();
+    var val = document.getElementById('name').value;
+	 if(val==""){
+	    document.getElementById('msg1').innerHTML="** please fill name";
+		return false;
+		}
+    if (!val.match(/^[A-Z][A-Za-z\ ]{3,}$/)) 
+    {
+        document.getElementById('msg1').innerHTML="Start with a Capital letter & Only alphabets space are allowed!!";
+		            document.getElementById('name').value = "";
         return false;
     }
-	if(document.form1.address.value=="")
-{
-alert("enter address");
-document.form1.address.focus();
-return false;
+document.getElementById('msg1').innerHTML=" ";
+    return true;
 }
-	if((document.form1.gender[0].checked==false) && (document.form1.gender[1].checked==false ))//radiobutton name=gender
+</script>
+<script>
+function Validname() 
 {
-alert("select gender");
+    var val = document.getElementById('address').value;
+	 if(val==""){
+	    document.getElementById('msg2').innerHTML="** please fill address";
+		return false;
+		}
+</script>
+<script>
+function Validata() 
+{
+    var val = document.getElementById('email').value;
+	 if(val==""){
+	    document.getElementById('msg3').innerHTML="** please fill email";
+		return false;
+		}
 
-return false;
-}
-if(document.form1.district.value==0)
-{
-alert("select district");
-document.form1.district.focus();
-return false;
-}
-if(document.form1.pincode.value=="")
-{
-alert("Enter pincode");
-document.form1.pincode.focus();
-return false;
-}
-
-var pin=document.form1.pincode.value.length;
-
-var max=6;
-if((pin<max) || (pin>max))
-{
-alert(" Enter 6 digit pincode");
-document.form1.pincode.focus();
-return false;
-}
-
-	  var emailid=document.form1.email.value;
-      var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-   
- 
-if(document.form1.email.value=="")
-{
-alert("enter emailid");
-document.form1.email.focus();
-return false;
-}
- if(reg.test(emailid) == false)
- {
-        alert("enter a valid Email id");
-        document.form1.email.focus();
-       return false;
+    if (!val.match(/([A-z0-9_\-\.]){1,}\@([A-z0-9_\-\.]){1,}\.([A-Za-z]){2,4}$/)) 
+    {
+        document.getElementById('msg3').innerHTML="Enter a Valid Email";
+		
+		     document.getElementById('email').value = "";
+        return false;
     }
-	
-	if(document.form1.phone.value=="")
-{
-alert("enter phone");
-document.form1.phonenumber.focus();
-return false;
+document.getElementById('msg3').innerHTML=" ";
+    return true;
 }
-var phone=document.form1.phonenumber.value;
-	var regx=/^(\+91)([6789]\d{9})$/;
-	if(regx.test(phone)==false)
+</script>
+<script>
+function Validat() 
+{
+    var val = document.getElementById('phone').value;
+    if(val==""){
+	    document.getElementById('msg4').innerHTML="** please fill mobile number";
+		return false;
+		}
+    if (!val.match(/^[7-9][0-9]{1,9}$/)) 
+    {
+        document.getElementById('msg4').innerHTML="Only Numbers are allowed and must contain 10 number";
+	
+		
+		            document.getElementById('phone').value = "";
+        return false;
+    }
+document.getElementById('msg4').innerHTML=" ";
+    return true;
+}
+</script>
+<script>
+function Vall()
+{
+ var val = document.getElementById('gender').value;
+    if(val==""){
+	    document.getElementById('msg7').innerHTML="** please select gender";
+		return false;
+		}
+		</script>
+		<script>
+ function Vals()
+{
+ var val = document.getElementById('district').value;
+    if(val==""){
+	    document.getElementById('msg8').innerHTML="** please select district";
+		return false;
+		}
+		</script>
+		<!--<script>
+ function Validm()
+		{
+    var val = document.getElementById('pincode').value;
+    if(val==""){
+	    document.getElementById('msg9').innerHTML="** please fill pincode";
+		return false;
+		}
+    if (!val.match(/^[7-9][0-9]$/)) 
+    {
+        document.getElementById('msg9').innerHTML="Only Numbers are allowed and must contain 6 number";
+	
+		
+		            document.getElementById('pincode').value = "";
+        return false;
+    }
+document.getElementById('msg9').innerHTML=" ";
+    return true;
+}
+</script>-->
+<script>
+function Validp() 
+{
+    var val = document.getElementById('password').value;
+	 if(val==""){
+	    document.getElementById('msg5').innerHTML="** please fill passwordr";
+		return false;
+		}
+
+    if (!val.match(/^[A-Za-z0-9!-*]{6,15}$/)) 
+    {
+        document.getElementById('msg5').innerHTML="Password should contain atleast 6 characters";
+		
+		     document.getElementById('password').value = "";
+        return false;
+    }
+document.getElementById('msg5').innerHTML=" ";
+    return true;
+}
+</script>
+<script>
+function check()
+{
+var pas1=document.getElementById("password");
+							  var pas2=document.getElementById("confirm_password");
+							
+							  if(pas1.value=="")
 	{
-		alert("enter country code +91,then 10 digit no starting with 6|7|8|9");
-		document.form1.phonenumber.focus();
+		document.getElementById('msg6').innerHTML="Password can't be null!!";
+		pas1.focus();
 		return false;
 	}
-	if(document.form1.password.value=="")
-{
-alert("enter password");
-document.form1.password.focus();
-return false;
-}
+	if(pas2.value=="")
+	{
+		document.getElementById('msg6').innerHTML="Please confirm password!!";
+		pas2.focus();
+		return false;
 	}
+	if(pas1.value!=pas2.value)
+	{
+		document.getElementById('msg6').innerHTML="Passwords does not match!!";
+		pas1.focus();
+		return false;
+	}
+     document.getElementById('msg6').innerHTML=" "; 
+	return true;
+	
+}
 	</script>
+
 	<!-- //team -->
 	<!-- contact -->
 	<div class="free_agile_consultation contact" id="a">
@@ -419,13 +484,24 @@ return false;
 			<h6></h6>
 		<form action="women_registration_Acc.php" method="post" name="form1">
 				<div class="contact-left agileits-w3layouts free_w3ls_agile">
-					<input type="text" name="name" placeholder="Name">
-					<input type="text" name="address" placeholder="Address" >
-					<input  name="email" type="text" placeholder="Email" >
-					<input  name="phone" type="text" placeholder="Phone" >
-					Gender<input  name="gender" type="radio" value="male" >Male
+				<span class="lnr lnr-user"></span>
+					<input type="text" name="name" id="name" placeholder="Name" required onChange="Validate();">
+					<span id="msg1" style="color:red;"></span>
+					<span class="lnr lnr-user"></span>
+					<input type="text" name="address" id="address" placeholder="Address" required onChange="Validname();">
+					<span id="msg2" style="color:red;"></span>
+					<span class="lnr lnr-user"></span>
+					<input  name="email" type="text" id="email" placeholder="Email"  required onChange="return Validata();">
+					<span id="msg3" style="color:red;"></span>
+					<span class="lnr lnr-user"></span>
+					<input  name="phone" id="phone" type="text" placeholder="Phone"  required onChange="Validat();">
+					<span id="msg4" style="color:red;"></span>
+					<span class="lnr lnr-user"></span>
+					Gender<input  name="gender" type="radio"  id="gender" value="male" required onChange="Vall();">Male
 					<input  name="gender" type="radio" value="female" >Female
-					<select class="form-control" name="district">
+					<span id="msg7" style="color:red;"></span>
+					<span class="lnr lnr-user"></span>
+					<select class="form-control" name="district" id="district"  required onChange="Vals();">
 								<option value="0">select district</option>
           <option value="kottayam">kottayam </option>
           <option value="ernakulam">ernakulam</option>
@@ -441,11 +517,19 @@ return false;
           <option value="malappuram">malappuram </option>
           <option value="iduki">iduki</option>
           <option value="kannur">kannur</option>
-							</select>			
-		<input  name="pincode" type="text" placeholder="Pincode" >
-				<input  name="password" type="text" placeholder="Password" >
-				<input  name="confirm_password" type="text" placeholder="confirm_password" >
-					<input type="submit" value="Register" onClick="return valid()">
+							</select>		
+							<span id="msg8" style="color:red;"></span>
+							<span class="lnr lnr-lock"></span>		
+		<input  name="pincode" type="text"  id="pincode" placeholder="Pincode" required onChange="Validm();">
+		<span id="msg9" style="color:red;"></span>
+		<span class="lnr lnr-lock"></span>
+				<input  name="password" id="password" type="text" placeholder="Password" required onChange="return Validp();">
+				<span id="msg5" style="color:red;"></span>
+				<span class="lnr lnr-lock"></span>
+				<input  name="confirm_password" type="text" id="confirm_password" placeholder="confirm_password" required onChange="return check();">
+				<span id="msg6" style="color:red;"></span>
+				</div>
+					<input type="submit" value="Register">
 					<p>
   		             Already a member? <a href="login/login.php">Login</a>
   	                </p>

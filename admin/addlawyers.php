@@ -180,37 +180,172 @@ return false;
             <div class="form-body-w3-agile text-center w-lg-50 w-sm-75 w-100 mx-auto mt-5">
                 <form  method="post" enctype="multipart/form-data">
                     <div class="form-group">
+					<span class="lnr lnr-user"></span>
                         <label>Enter Lawyer name</label>
-                        <input type="text" class="form-control" placeholder="enter lawyer name" name="name" required>
+                        <input type="text" class="form-control" placeholder="enter lawyer name" name="name"  id="name" required onChange="Vallawn();">
                     </div>
+                    <span id="msgl1" style="color:red;"></span>
+<script>		
+function Vallawn() 
+{
+    var val = document.getElementById('name').value;
+	 if(val=="")
+	 {
+	    document.getElementById('msgl1').innerHTML="** please fill name";
+		return false;
+		}
+    if (!val.match(/^[A-Z][A-Za-z\ ]{3,}$/)) 
+    {
+        document.getElementById('msgl1').innerHTML="Start with a Capital letter & Only alphabets without space are allowed!!";
+		            document.getElementById('name').value = "";
+        return false;
+    }
+document.getElementById('msgl1').innerHTML=" ";
+    return true;
+}
+</script>>
+                    
                     
                    <div class="form-group">
+				    <span class="lnr lnr-user"></span>
                         <label>Age</label>
-                        <input type="text" class="form-control" placeholder="enter your age" name="age" required>
+                        <input type="text" class="form-control" placeholder="enter your age" name="age" id="age" required onChange="Vallawa();">
                     </div>
+					 <span id="msgl2" style="color:red;"></span>
+<script>
+function Vallawa() 
+{
+    var val = document.getElementById('age').value;
+    if(val==""){
+	    document.getElementById('msgl2').innerHTML="** please fill age";
+		return false;
+		}
+    if (!val.match(/^[0-9]{1,9}$/)) 
+    {
+        document.getElementById('msgl2').innerHTML="Only Numbers are allowed";
+	
+		
+		            document.getElementById('age').value = "";
+        return false;
+    }
+document.getElementById('msgl2').innerHTML=" ";
+    return true;
+}
+</script>>
+                    
 					
 		 <div class="form-group">
+		 <span class="lnr lnr-user"></span>
                         <label>select gender</label>
-                     <input  name="gender" type="radio" value="male" >Male
+                     <input  name="gender" type="radio" value="male" id="gender" value="male"reguired required onChange="Vallawm();">Male
 					<input  name="gender" type="radio" value="female" >Female
                     </div>
+					 <span id="msgl3" style="color:red;"></span>
+<script>
+function Vallawm()
+{
+ var val = document.getElementById('gender').value;
+    if(val==""){
+	    document.getElementById('msgl3').innerHTML="** please select gender";
+		return false;
+		}
+		</script>
+                    
                       <div class="form-group">
+					  <span class="lnr lnr-user"></span>
                         <label>Enter phonenumber</label>
-                        <input type="text" class="form-control" placeholder="enter your phonenumber" name="phonenumber" required>
+                        <input type="text" class="form-control" placeholder="enter your phonenumber" name="phonenumber" id="phonenumber" required onChange="Vallawpn();">
                     </div>
+					 <span id="msgl4" style="color:red;"></span>
+<script>
+function Vallawpn() 
+{
+    var val = document.getElementById('phonenumber').value;
+    if(val==""){
+	    document.getElementById('msgl4').innerHTML="** please fill mobile number";
+		return false;
+		}
+    if (!val.match(/^[7-9][0-9]{1,9}$/)) 
+    {
+        document.getElementById('msgl4').innerHTML="Only Numbers are allowed and must contain 10 number";
+	
+		
+		            document.getElementById('phonenumber').value = "";
+        return false;
+    }
+document.getElementById('msgl4').innerHTML=" ";
+    return true;
+}
+</script>
+                   
 					 <div class="form-group">
+					  <span class="lnr lnr-user"></span>
                         <label>Enter email id</label>
-                        <input type="text" class="form-control" placeholder="enter your mail id" name="email" required>
+                        <input type="text" class="form-control" placeholder="enter your mail id" name="email" id="email" required onChange="Vallawem();">
                     </div>
+					<span id="msgl4" style="color:red;"></span>
+<script>
+function Vallawem() 
+{
+    var val = document.getElementById('email').value;
+	 if(val==""){
+	    document.getElementById('msgl5').innerHTML="** please fill email";
+		return false;
+		}
+
+    if (!val.match(/([A-z0-9_\-\.]){1,}\@([A-z0-9_\-\.]){1,}\.([A-Za-z]){2,4}$/)) 
+    {
+        document.getElementById('msgl5').innerHTML="Enter a Valid Email";
+		
+		     document.getElementById('email').value = "";
+        return false;
+    }
+document.getElementById('msgl5').innerHTML=" ";
+    return true;
+}
+</script>
+                   
 					  <div class="form-group">
+					   <span class="lnr lnr-user"></span>
                         <label>Enter address</label>
-                        <textarea type="text" class="form-control" placeholder="enter your address" name="address"></textarea>
-                    </div>
+                        <textarea type="text" class="form-control" placeholder="enter your address" name="address" id="address" required onChange="Vallawadd();"></textarea>
+                    <span id="msgl6" style="color:red;"></span>
+<script>
+function Vallawadd() 
+{
+    var val = document.getElementById('address').value;
+	 if(val==""){
+	    document.getElementById('msgl6').innerHTML="** please fill address";
+		return false;
+		}
+</script>
 					 <div class="form-group">
+					  <span class="lnr lnr-user"></span>
                         <label>Enter Court name</label>
-                        <input type="text" class="form-control" placeholder="enter the court name" name="court" required>
+                        <input type="text" class="form-control" placeholder="enter the court name" name="court" id="court" required onChange="Vallawcr();">
                     </div>
+					<span id="msgl7" style="color:red;"></span>
+					<script>
+function Validname() 
+{
+    var val = document.getElementById('court').value;
+	 if(val==""){
+	    document.getElementById('msgl7').innerHTML="** please fill court";
+		return false;
+		}
+    if (!val.match(/^[A-Z][a-z\ ]{3,}$/)) 
+    {
+        document.getElementById('msgl7').innerHTML="Start with a Capital letter";
+		            document.getElementById('court').value = "";
+        return false;
+    }
+document.getElementById('msgl7').innerHTML=" ";
+    return true;
+}
+</script>
+                   
 					 <div class="form-group">
+					 <span class="lnr lnr-user"></span>
                         <label>Enter district</label>
                     <select name="district" class="form-control">
       <option value="0">select</option>
@@ -230,13 +365,61 @@ return false;
       <option value="kasargod">kasargod</option>
     </select>
 	</div>
+	<span id="msgl8" style="color:red;"></span>
+	<script>
+ function Vals()
+{
+ var val = document.getElementById('district').value;
+    if(val==""){
+	    document.getElementById('msgl8').innerHTML="** please select district";
+		return false;
+		}
+		</script>
 	<div class="form-group">
                         <label>Upload id proof</label>
-                        <input type="file" class="form-control" placeholder="upload your id proof" name="file" required>
+                        <input type="file" class="form-control" placeholder="upload your id proof" name="file" id="file"  required onChange="return fileValide();">
+                    </div>
+					 <script>
+        function fileValide() {
+            var fileInput = 
+                document.getElementById('file');
+              
+            var filePath = fileInput.value;
+          
+            // Allowing file type
+            var allowedExtensions = 
+/(\.pdf|\.jpg|\.png|\.jpeg|\.wpd)$/i;
+              
+            if (!allowedExtensions.exec(filePath)) {
+                alert('Invalid file type');
+                fileInput.value = '';
+                return false;
+            } 
+        }
+    </script>>
                     </div>
 					<div class="form-group">
                         <label>Upload photo</label>
-                        <input type="file" class="form-control" placeholder="upload your phpto" name="file1" required>
+                        <input type="file" class="form-control" placeholder="upload your phpto" name="file1" id="file" required onChange="return fileValid();">
+                    </div>
+					 <script>
+        function fileValid() {
+            var fileInput = 
+                document.getElementById('file');
+              
+            var filePath = fileInput.value;
+          
+            // Allowing file type
+            var allowedExtensions = 
+/(\.pdf|\.jpg|\.png|\.jpeg|\.wpd)$/i;
+              
+            if (!allowedExtensions.exec(filePath)) {
+                alert('Invalid file type');
+                fileInput.value = '';
+                return false;
+            } 
+        }
+    </script>>
                     </div>
 					<!--<div class="form-group">
                         <label>Enter section</label>

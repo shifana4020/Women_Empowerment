@@ -1,4 +1,4 @@
-r<?php
+<?php
 session_start();
 ?><!--
 Author: W3layouts
@@ -43,38 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
     <!--//web-fonts-->
-    <script type="text/javascript">
-function valid()
-{
-if(document.form5.name.value=="")
-{
-alert("enter the right name");
-document.form5.name.focus();
-return false;
-}
-if(!isNaN(document.form5.name.value))
-{
-alert("enter alphabets only");
-document.form5.name.focus();
-return false;
-}
-if(document.form5.discription.value=="")
-{
-alert("Enter your discription");
-document.form5.discription.focus();
-return false;
-}
-if(document.form5.file.value=="")
-{
-alert("Enter the file");
-document.form5.file.focus();
-return false;>
-<form action="" method="post" name="form5" enctype="multipart/form-data">
-    <div class="bg-page py-5">
-
-}
-}
-</script>
+	
 </head>
 <body        <div class="container">
             <!-- main-heading -->
@@ -83,19 +52,72 @@ return false;>
             <div class="form-body-w3-agile text-center w-lg-50 w-sm-75 w-100 mx-auto mt-5">
                 <form  method="post" enctype="multipart/form-data">
                     <div class="form-group">
+					<span class="lnr lnr-user"></span>
                         <label>Add rights</label>
-                        <input type="text" class="form-control" placeholder="enter right name" name="name">
+                        <input type="text" class="form-control" placeholder="enter right name" name="name"  id="name" required onCHange="Valr();">
                     </div>
+                    <span id="msgr" style="color:red;"></span>
+<script>		
+function Valr() 
+{
+    var val = document.getElementById('name').value;
+	 if(val=="")
+	 {
+	    document.getElementById('msgr').innerHTML="** please fill right name";
+		return false;
+		}
+    if (!val.match(/^[A-Z][A-Za-z]{3,}$/)) 
+    {
+        document.getElementById('msgr').innerHTML="Start with a Capital letter & Only alphabets without space are allowed!!";
+		            document.getElementById('name').value = "";
+        return false;
+    }
+document.getElementById('msgr').innerHTML=" ";
+    return true;
+}
+</script>
+                    
                     
                    <div class="form-group">
+				    <span class="lnr lnr-user"></span>
                         <label>Add discription</label>
-                        <textarea type="text" class="form-control" placeholder="discription" name="discription"></textarea>
+                        <textarea type="text" class="form-control" placeholder="discription" name="discription" id="discription" required onChange="Valrr();"></textarea>
                     </div>
+					<span id="msgrr" style="color:red;"></span>
+<script>		
+function Valrr() 
+{
+    var val = document.getElementById('discription').value;
+	 if(val=="")
+	 {
+	    document.getElementById('msgrr').innerHTML="** please fill description";
+		return false;
+		}
+</script>
                       <div class="form-group">
+					   <span class="lnr lnr-user"></span>
                         <label>upload photo</label>
-                        <input type="file" class="form-control"  name="file">
+                        <input type="file" class="form-control"  id="file" name="file" required onChange="return fileValidation();">
        </div>
-                    <input type="submit" name="b"  value="Add right" onClick="return valid()" class="btn btn-primary error-w3l-btn mt-sm-5 mt-3 px-4">
+	   <script>
+        function fileValidation() {
+            var fileInput = 
+                document.getElementById('file');
+              
+            var filePath = fileInput.value;
+          
+            // Allowing file type
+            var allowedExtensions = 
+/(\.pdf|\.jpg|\.png|\.jpeg|\.wpd)$/i;
+              
+            if (!allowedExtensions.exec(filePath)) {
+                alert('Invalid file type');
+                fileInput.value = '';
+                return false;
+            } 
+        }
+    </script>
+                    <input type="submit" name="b"  value="Add right" class="btn btn-primary error-w3l-btn mt-sm-5 mt-3 px-4">
                 </form>
                
                 <h1 class="paragraph-agileits-w3layouts mt-2">

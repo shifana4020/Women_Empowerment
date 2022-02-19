@@ -90,22 +90,88 @@ return false;
             <div class="form-body-w3-agile text-center w-lg-50 w-sm-75 w-100 mx-auto mt-5">
                 <form  method="post" enctype="multipart/form-data">
                     <div class="form-group">
+					<span class="lnr lnr-user"></span>
                         <label>Program name</label>
-                        <input type="text" class="form-control" placeholder="enter program name" name="programname">
+                        <input type="text" class="form-control" placeholder="enter program name" name="programname" id="programname" required onChange="Valprg();">
                     </div>
+					<span id="msglii1" style="color:red;"></span>
+<script>		
+function Valprg() 
+{
+    var val = document.getElementById('programname').value;
+	 if(val=="")
+	 {
+	    document.getElementById('msglii1').innerHTML="** please fill program name";
+		return false;
+		}
+    if (!val.match(/^[A-Z][A-Za-z]{3,}$/)) 
+    {
+        document.getElementById('msglii1').innerHTML="Start with a Capital letter & Only alphabets without space are allowed!!";
+		            document.getElementById('programname').value = "";
+        return false;
+    }
+document.getElementById('msglii1').innerHTML=" ";
+    return true;
+}
+</script>
+
                     <div class="form-group">
+					<span class="lnr lnr-user"></span>
                         <label>Program date</label>
-                        <input type="date" class="form-control" name="date">
+                        <input type="date" class="form-control" name="date" id="date" required onChange="vdate();">
                     </div>
+					<span id="msgd" style="color:red;"></span>
+<script>		
+function vdate() 
+{
+    var val = document.getElementById('date').value;
+	 if(val=="")
+	 {
+	    document.getElementById('msgd').innerHTML="** please fill date";
+		return false;
+		}
+</script>
                    <div class="form-group">
+				   <span class="lnr lnr-user"></span>
                         <label>Add description</label>
-                        <textarea type="text" class="form-control" placeholder="description" name="discription"></textarea>
+                        <textarea type="text" class="form-control" placeholder="description" name="discription"  id="discription" required onChange="Valiprg();"></textarea>
                     </div>
+					<span id="msgi1" style="color:red;"></span>
+<script>		
+function Valiprg() 
+{
+    var val = document.getElementById('discription').value;
+	 if(val=="")
+	 {
+	    document.getElementById('msgi1').innerHTML="** please fill description";
+		return false;
+		}
+</script>
                      <div class="form-group">
+					 <span class="lnr lnr-user"></span>
                         <label>Upload Poster/Brochure</label>
-                        <input type="file" class="form-control" name="file">
+                        <input type="file" class="form-control" name="file" id="file" required onChange="return fileValidation();">
                     </div>
-                    <input type="submit" name="b"  value="Add program" onClick="return valid()" class="btn btn-primary error-w3l-btn mt-sm-5 mt-3 px-4">
+					<script>
+        function fileValidation() {
+            var fileInput = 
+                document.getElementById('file');
+              
+            var filePath = fileInput.value;
+          
+            // Allowing file type
+            var allowedExtensions = 
+/(\.pdf|\.jpg|\.png|\.jpeg|\.wpd)$/i;
+              
+            if (!allowedExtensions.exec(filePath)) {
+                alert('Invalid file type');
+                fileInput.value = '';
+                return false;
+            } 
+        }
+    </script>
+                    
+                    <input type="submit" name="b"  value="Add program"  class="btn btn-primary error-w3l-btn mt-sm-5 mt-3 px-4">
                 </form>
                
                 <h1 class="paragraph-agileits-w3layouts mt-2">

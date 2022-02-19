@@ -64,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li class="active"><a href="userindex.php"><span>Home</span></a></li>
 							<li><a href="reportcase.php"><span>Report Case</span></a></li>
 							<li><a href="viewcases.php"><span>View Cases</span></a></li>
-							<li><a href="caestatus.php"><span>Case Status</span></a></li>
+							<li><a href="rejectcase.php"><span>Case Status</span></a></li>
 								<li><a href="viewawarenessprograms.php"><span>Awareness programs</span></a></li>
 								<li><a href="viewrights.php"><span>Rights</span></a></li>
 							<li><a href="../logout.php"><span>Logout</span></a></li>

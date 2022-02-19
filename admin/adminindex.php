@@ -72,13 +72,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         Dashboard
                     </a>
                 </li>
-                <li>
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+				<li>
+                    <a href="#homeSubme" data-toggle="collapse" aria-expanded="false">
                         <i class="fas fa-laptop"></i>
                         Approval & view
                         <i class="fas fa-angle-down fa-pull-right"></i>
                     </a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <ul class="collapse list-unstyled" id="homeSubme">
                         <li>
                             <a href="userapproval.php">User Approval</a>
                         </li>
@@ -87,23 +87,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </li> -->
                     </ul>
                 <li>
-                    <a href="addrights.php">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
                         <i class="fas fa-th"></i>
                         Rights for women
+						 <i class="fas fa-angle-down fa-pull-right"></i>
                     </a>
+					 <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="addrights.php">Add Rights</a>
+                        </li>
+                        <li>
+                            <a href="addrights.php">Edit & View </a>
+                       
                 </li>
+				</ul>
 				 <li>
-                    <a href="addawarenessprograms.php">
+                    <a href="#homeSubmen" data-toggle="collapse" aria-expanded="false">
                         <i class="fas fa-th"></i>
-                        Awarenessprograms
+                        Awareness programs 
+						 <i class="fas fa-angle-down fa-pull-right"></i>
                     </a>
+					 <ul class="collapse list-unstyled" id="homeSubmen">
+                        <li>
+                            <a href="addawarenessprograms.php">Add Awareness programs</a>
+                        </li>
+                        <li>
+                            <a href="addawarenessprograms.php">Edit & View</a>
+                       
                 </li>
+				</ul>
 				 <li>
-                    <a href="addlawyers.php">
+                    <a href="#homeSub" data-toggle="collapse" aria-expanded="false">
                         <i class="fas fa-th"></i>
-                        Add lawyers
+                        Lawyers
+						 <i class="fas fa-angle-down fa-pull-right"></i>
                     </a>
+					 <ul class="collapse list-unstyled" id="homeSub">
+                        <li>
+                            <a href="addlawyers.php">Add Lawyers</a>
+                        </li>
+                        <li>
+                            <a href="addlawyers.php">Edit & View Lawyers</a>
+                       
                 </li>
+				</ul>
 				 <li>
                     <a href="viewcases.php">
                         <i class="fas fa-th"></i>
